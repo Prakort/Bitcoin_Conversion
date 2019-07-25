@@ -10,6 +10,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extened:true}));
+app.use(express.static("public"));
 
 
 app.get("/",function(req,res){
@@ -49,6 +50,6 @@ var price;
 
 
 });
-app.listen(2000|| process.env.PORT,function(){
-    console.log("server is running 3k");
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
